@@ -18,11 +18,18 @@ class ViewModel(private val model: Model) {
     fun startViewModel(observable: TextObservable){
         textObservable = observable
         model.setCallback(callBackForModel)
-        model.start()
     }
 
     fun clear(){
         textObservable = null
+    }
+
+    fun resumeCount(){
+        model.start()
+    }
+
+    fun stopCount(){
+        model.stop()
     }
 
 }

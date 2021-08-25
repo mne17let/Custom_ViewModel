@@ -37,6 +37,15 @@ class MainActivity: AppCompatActivity() {
         viewModel.startViewModel(textObservable)
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.resumeCount()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.stopCount()
+    }
 
     override fun onDestroy() {
         super.onDestroy()
